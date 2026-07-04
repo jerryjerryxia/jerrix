@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.className = 'js';</script>
 
-  <title>Jerrix</title>
-  <meta name="description" content="Personal site of Jerrix — game developer and founder of Ampelos Studio." />
+  <title>Jerrix — Game Developer &amp; Narrative Designer</title>
+  <meta name="description" content="Jerrix — game developer and narrative designer, founder of Ampelos Studio. Currently making Endless Summer Syndrome, coming soon to Steam." />
   <link rel="canonical" href="https://www.jerrix.studio/" />
   <link rel="alternate" hreflang="en" href="https://www.jerrix.studio/" />
   <link rel="alternate" hreflang="zh-Hans" href="https://www.jerrix.studio/zh/" />
@@ -16,9 +17,16 @@
   <!-- Open Graph / social -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Jerrix" />
-  <meta property="og:title" content="Jerrix" />
-  <meta property="og:description" content="Personal site of Jerrix — game developer and founder of Ampelos Studio." />
+  <meta property="og:title" content="Jerrix — Game Developer & Narrative Designer" />
+  <meta property="og:description" content="Game developer and narrative designer, founder of Ampelos Studio. Currently making Endless Summer Syndrome." />
   <meta property="og:url" content="https://www.jerrix.studio/" />
+  <meta property="og:image" content="https://www.jerrix.studio/assets/games/ess/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jerrix — Game Developer & Narrative Designer" />
+  <meta name="twitter:description" content="Game developer and narrative designer, founder of Ampelos Studio. Currently making Endless Summer Syndrome." />
+  <meta name="twitter:image" content="https://www.jerrix.studio/assets/games/ess/og.jpg" />
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/games/ess/favicon-32.png?v=2" />
@@ -28,7 +36,11 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="preload" as="image" type="image/webp"
+        imagesrcset="assets/games/ess/hero-640.webp 640w, assets/games/ess/hero-960.webp 960w, assets/games/ess/hero-1280.webp 1280w, assets/games/ess/hero.webp 1920w, assets/games/ess/hero-2560.webp 2560w, assets/games/ess/hero-3840.webp 3840w" imagesizes="100vw" />
+  <link rel="stylesheet" href="css/home.css" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -37,7 +49,7 @@
     "@type": "Person",
     "name": "Jerrix",
     "url": "https://www.jerrix.studio/",
-    "jobTitle": "Game Developer",
+    "jobTitle": "Game Developer & Narrative Designer",
     "worksFor": { "@type": "Organization", "name": "Ampelos Studio", "url": "https://www.ampelos.studio/" },
     "sameAs": [
       "https://www.ampelos.studio/",
@@ -46,133 +58,115 @@
     ]
   }
   </script>
-
-  <style>
-    :root {
-      --bg: #0b1622;
-      --bg-2: #0e1c2c;
-      --text: #eaf1f8;
-      --muted: #8ba0b5;
-      --line: rgba(255,255,255,.10);
-      --accent: #e0b877;
-      --maxw: 720px;
-    }
-    * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background: radial-gradient(120% 80% at 50% -10%, var(--bg-2), var(--bg) 60%);
-      color: var(--text);
-      font-family: "Inter", system-ui, -apple-system, "Noto Sans SC", sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; }
-
-    /* Announcement ribbon */
-    .ribbon {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: .5rem 1.25rem;
-      padding: .7rem 1.25rem;
-      font-size: .875rem;
-      background: rgba(224,184,119,.06);
-      border-bottom: 1px solid var(--line);
-      text-align: center;
-    }
-    .ribbon__msg { color: var(--muted); }
-    .ribbon__msg strong { color: var(--text); font-weight: 600; }
-    .ribbon a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      white-space: nowrap;
-      border-bottom: 1px solid transparent;
-      transition: border-color .2s;
-    }
-    .ribbon a:hover { border-bottom-color: currentColor; }
-    .ribbon .sep { color: var(--line); }
-
-    /* Hero / identity */
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 1.5rem;
-    }
-    .hero { max-width: var(--maxw); text-align: center; }
-    .hero__name {
-      font-family: "Fraunces", Georgia, serif;
-      font-weight: 500;
-      font-size: clamp(3rem, 12vw, 6rem);
-      letter-spacing: .01em;
-      margin: 0;
-      line-height: 1.02;
-    }
-    .hero__tag {
-      margin: 1.25rem 0 0;
-      color: var(--muted);
-      font-size: clamp(1rem, 2.4vw, 1.15rem);
-    }
-    .hero__soon {
-      margin-top: 2.5rem;
-      display: inline-block;
-      padding: .4rem 1rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: .8rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    /* Footer */
-    .footer {
-      border-top: 1px solid var(--line);
-      padding: 1.75rem 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: .5rem 1.5rem;
-      font-size: .875rem;
-      color: var(--muted);
-    }
-    .footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
-    .footer a:hover { color: var(--text); }
-    .footer__lang { margin-left: auto; }
-    @media (max-width: 560px) { .footer__lang { margin-left: 0; } }
-  </style>
 </head>
-<body>
-  <!-- Announcement ribbon -->
-  <div class="ribbon">
-    <span class="ribbon__msg"><strong>Endless Summer Syndrome</strong> is coming to Steam</span>
-    <a href="https://store.steampowered.com/app/4714410/Endless_Summer_Syndrome/" target="_blank" rel="noopener">Wishlist ↗</a>
-    <span class="sep" aria-hidden="true">|</span>
-    <a href="https://www.ampelos.studio/" target="_blank" rel="noopener">Ampelos Studio ↗</a>
-  </div>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <main>
-    <div class="hero">
-      <h1 class="hero__name">Jerrix</h1>
-      <p class="hero__tag">Game developer &amp; narrative designer. Founder of Ampelos Studio.</p>
-      <span class="hero__soon">More coming soon</span>
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="Jerrix — home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">JERRIX</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="https://www.ampelos.studio/" target="_blank" rel="noopener">Ampelos Studio ↗</a>
+        <a class="lang-switch" href="zh/index.html" data-lang-switch hreflang="zh-Hans" lang="zh-Hans">中文</a>
+        <a class="nav__cta" href="https://store.steampowered.com/app/4714410/Endless_Summer_Syndrome/" target="_blank" rel="noopener">Wishlist on Steam</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- ===================== HERO (Endless Summer Syndrome) ===================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <picture>
+          <source type="image/webp" sizes="100vw"
+                  srcset="assets/games/ess/hero-640.webp 640w, assets/games/ess/hero-960.webp 960w, assets/games/ess/hero-1280.webp 1280w, assets/games/ess/hero.webp 1920w, assets/games/ess/hero-2560.webp 2560w, assets/games/ess/hero-3840.webp 3840w" />
+          <img decoding="sync" src="assets/games/ess/hero.jpg"
+               srcset="assets/games/ess/hero-640.jpg 640w, assets/games/ess/hero-960.jpg 960w, assets/games/ess/hero-1280.jpg 1280w, assets/games/ess/hero.jpg 1920w, assets/games/ess/hero-2560.jpg 2560w"
+               sizes="100vw"
+               alt="A girl with flowing pale hair gazes out over a sparkling summer ocean beneath a brilliant blue sky — key art for Endless Summer Syndrome." fetchpriority="high" width="1920" height="1080" />
+        </picture>
+      </div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+
+      <div class="hero__content reveal">
+        <p class="hero__eyebrow">Latest from Ampelos Studio</p>
+        <h1 class="hero__title" id="hero-title">Endless Summer<br>Syndrome</h1>
+        <p class="hero__tagline">You ended the world as you knew it&nbsp;— and she gave you an endless summer as your reward.</p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://store.steampowered.com/app/4714410/Endless_Summer_Syndrome/" target="_blank" rel="noopener">
+            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M11.98 2C6.7 2 2.36 6.03 2.05 11.2l5.36 2.21a2.8 2.8 0 0 1 1.58-.49l2.38-3.45v-.05a3.74 3.74 0 1 1 3.74 3.74h-.09l-3.4 2.43c0 .03 0 .06.01.09a2.81 2.81 0 1 1-5.6.18l-3.83-1.58A10 10 0 1 0 11.98 2zM8.5 17.66l-1.23-.5a2.12 2.12 0 0 0 3.93-1.6 2.12 2.12 0 0 0-2.76-1.18l1.27.52a1.56 1.56 0 1 1-1.2 2.88zm8.74-6.92a2.49 2.49 0 1 0-2.49-2.49 2.49 2.49 0 0 0 2.49 2.49zm0-.62a1.87 1.87 0 1 1 1.87-1.87 1.87 1.87 0 0 1-1.87 1.87z"/></svg>
+            Wishlist on Steam
+          </a>
+          <a class="btn btn--ghost" href="#projects">See my work</a>
+        </div>
+      </div>
+
+      <a class="scrollcue" href="#projects" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="more" id="projects" aria-labelledby="projects-title">
+      <div class="wrap reveal">
+        <h2 class="more__title" id="projects-title">Projects</h2>
+
+        <div class="more__grid">
+          <a class="minicard" href="the-faded.html">
+            <span class="minicard__img"><img decoding="async" src="assets/images/AOL3-1.jpg" loading="lazy" alt="" width="5654" height="5465" /></span>
+            <span class="minicard__body">
+              <span class="minicard__title">The Adolescence of a Lunatic</span>
+              <span class="minicard__desc">A post-modern visual novel about nihilism, disillusionment, and the search for purpose.</span>
+              <span class="minicard__more">View project →</span>
+            </span>
+          </a>
+
+          <a class="minicard" href="once-upon-a-spring.html">
+            <span class="minicard__img"><img decoding="async" src="assets/images/CL1-2.jpg" loading="lazy" alt="" width="4923" height="1161" /></span>
+            <span class="minicard__body">
+              <span class="minicard__title">Once Upon a Spring</span>
+              <span class="minicard__desc">A puzzle adventure through one woman's turbulent psyche — on scars, mental illness, and love.</span>
+              <span class="minicard__more">View project →</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="wrap about__inner reveal">
+        <h2 class="about__title" id="about-title">About Jerrix</h2>
+        <p class="about__text">I'm <strong>Jerrix</strong>&nbsp;— a game developer and narrative designer. I founded <a href="https://www.ampelos.studio/" target="_blank" rel="noopener">Ampelos Studio</a>, where I make narrative games fascinated by the deep intricacies of the human mind. <em>Endless Summer Syndrome</em> is our debut title. More about me&nbsp;— and the rest of my work&nbsp;— coming soon.</p>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <a href="mailto:jerryjerryxia@gmail.com">Email</a>
-    <a href="https://github.com/jerryjerryxia" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://www.linkedin.com/in/jerryjerryxia/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://store.steampowered.com/app/4714410/Endless_Summer_Syndrome/" target="_blank" rel="noopener">Steam</a>
-    <a class="footer__lang" href="zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="contact">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">JERRIX</div>
+      <nav class="footer__links" aria-label="Contact and social">
+        <a href="mailto:jerryjerryxia@gmail.com">Email</a>
+        <a href="https://www.ampelos.studio/" target="_blank" rel="noopener">Ampelos Studio</a>
+        <a href="https://store.steampowered.com/app/4714410/Endless_Summer_Syndrome/" target="_blank" rel="noopener">Steam</a>
+        <a href="https://www.linkedin.com/in/jerryjerryxia/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/jerryjerryxia" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <p class="footer__copy">© 2026 Jerrix. <em>Endless Summer Syndrome</em> and related artwork are property of <a href="https://www.ampelos.studio/" target="_blank" rel="noopener">Ampelos Studio</a>.</p>
+    </div>
   </footer>
+
+  <script src="js/home.js" defer></script>
 </body>
 </html>
