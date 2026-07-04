@@ -465,7 +465,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
    ========================================================= */
 .more { padding: clamp(4rem, 11vw, 7rem) 0 clamp(3rem, 8vw, 5rem); background: var(--ink-1); }
 .more__title { font-family: var(--display); font-weight: 500; font-size: clamp(1.6rem, 3.6vw, 2.3rem); text-align: center; margin-bottom: 2.4rem; }
-.more__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; max-width: 880px; margin-inline: auto; }
+.more__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 400px)); justify-content: center; gap: 1.2rem; max-width: 880px; margin-inline: auto; }
 .minicard {
   display: flex; gap: 1rem; align-items: stretch;
   background: var(--ink-2); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
